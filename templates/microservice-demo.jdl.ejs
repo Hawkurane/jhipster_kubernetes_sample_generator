@@ -29,26 +29,6 @@ application {
  }
  entities * except Invoice, Shipment
 }
-application {
- config {
-   baseName accountancy,
-   applicationType microservice,
-   packageName com.jhipster.demo.accountancy,
-   serviceDiscoveryType <%= sdType %>,
-   authenticationType <%= authType %>,
-   databaseType mongodb,
-   prodDatabaseType mongodb,
-   devDatabaseType mongodb,
-   cacheProvider no,
-   enableHibernateCache false,
-   buildTool maven,
-   serverPort 8082,
-   skipUserManagement true,
-   testFrameworks [gatling]
- }
- entities Invoice, Shipment
-}
-
 entity Product {
    name String required
    description String
@@ -129,3 +109,15 @@ service Invoice, Shipment with serviceClass
 paginate Invoice, Shipment with pagination
 microservice Invoice, Shipment with accountancy
 microservice Customer, Product, ProductOrder, OrderItem with crm
+
+deployment {
+   deploymentType kubernetes,
+   appsFolders [store, crm]
+   dockerRepositoryName "jeromepham",
+   gatewayType zuul,
+   monitoring no,
+   serviceDiscoveryType <%= sdType %>
+   kubernetesNamespace jhipster,
+   kubernetesServiceType LoadBalancer,
+   istio false
+}

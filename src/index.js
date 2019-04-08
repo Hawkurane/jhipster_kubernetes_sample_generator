@@ -13,45 +13,48 @@ const config = {
 };
 
 const filename = "templates/microservice-demo.jdl.ejs";
-let cpt = 0;
-config.serviceDiscoveryType.forEach(sdType => {
-  config.authenticationType.forEach(authType => {
-    config.prodDatabaseType.forEach(proddbType => {
-      config.cacheProvider.forEach(cacheType => {
-        ejs.renderFile(
-          filename,
-          {
-            sdType: sdType,
-            authType: authType,
-            proddbType: proddbType,
-            cacheType: cacheType
-          },
-          function(err, str) {
-            if (err) console.log(err);
-            else {
-              fs.mkdir(
-                path.join(__dirname, `/../samples/${cpt}`),
-                { recursive: true },
-                err => {
-                  if (err) throw err;
-                }
-              );
-              fs.writeFile(
-                path.join(
-                  __dirname,
-                  "/..",
-                  `/samples/${cpt}/microservice-demo.jdl`
-                ),
-                str,
-                function(error, data) {
-                  if (error) console.log(error);
-                }
-              );
+let cpt = 0; //Find a better way to name generated folders
+try {
+  config.serviceDiscoveryType.forEach(sdType => {
+    config.authenticationType.forEach(authType => {
+      config.prodDatabaseType.forEach(proddbType => {
+        config.cacheProvider.forEach(cacheType => {
+          ejs.renderFile(
+            filename,
+            {
+              sdType: sdType,
+              authType: authType,
+              proddbType: proddbType,
+              cacheType: cacheType
+            },
+            function(err, str) {
+              if (err) console.log(err);
+              else {
+                fs.mkdirSync(
+                  path.join(__dirname, `/../samples/${cpt}`),
+                  { recursive: true },
+                  err => {
+                    if (err) throw err;
+                  }
+                );
+                fs.writeFile(
+                  path.join(
+                    __dirname,
+                    `/../samples/${cpt}/microservice-demo.jdl`
+                  ),
+                  str,
+                  function(error, data) {
+                    if (error) throw err;
+                  }
+                );
+              }
+              cpt++;
             }
-            cpt++;
-          }
-        );
+          );
+        });
       });
     });
   });
-});
+} catch (e) {
+  console.error(e);
+}
