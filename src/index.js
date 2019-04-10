@@ -7,13 +7,12 @@ const config = {
   prodDatabaseType: ["mysql", "mariadb", "postgresql"],
   cacheProvider: ["hazelcast", "ehcache", "infinispan", "memcached", "no"], //memcached
 
-  searchEngine: "elasticsearch", //optional
-  messageBroker: "useKakfa: = true" //optional
-  //open API?
+  searchEngine: "elasticsearch", //optional, at the moment not covered
+  messageBroker: "useKakfa: = true" //optional, at the moment not covered
+  //Open API?
 };
 
 const filename = "templates/microservice-demo.jdl.ejs";
-let cpt = 0; //Find a better way to name generated folders
 try {
   config.serviceDiscoveryType.forEach(sdType => {
     config.authenticationType.forEach(authType => {
@@ -31,7 +30,10 @@ try {
               if (err) console.log(err);
               else {
                 fs.mkdirSync(
-                  path.join(__dirname, `/../samples/${cpt}`),
+                  path.join(
+                    __dirname,
+                    `/../samples/${sdType}-${authType}-${proddbType}-${cacheType}`
+                  ),
                   { recursive: true },
                   err => {
                     if (err) throw err;
@@ -40,7 +42,7 @@ try {
                 fs.writeFile(
                   path.join(
                     __dirname,
-                    `/../samples/${cpt}/microservice-demo.jdl`
+                    `/../samples/${sdType}-${authType}-${proddbType}-${cacheType}/microservice-demo.jdl`
                   ),
                   str,
                   function(error, data) {
@@ -48,13 +50,13 @@ try {
                   }
                 );
               }
-              cpt++;
             }
           );
         });
       });
     });
   });
+  console.log("Samples generated succesfully.");
 } catch (e) {
   console.error(e);
 }

@@ -5,11 +5,28 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "test"
+    "clean": "rm -rdf samples",
+    "rebuild": "clean; start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsonmd}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.6.1"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4"
   }
 }
