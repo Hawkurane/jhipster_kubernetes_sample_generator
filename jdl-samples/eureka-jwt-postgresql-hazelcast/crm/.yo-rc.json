@@ -29,7 +29,7 @@
     "jhipsterVersion": "6.0.0-beta.0",
     "clientPackageManager": "npm",
     "cacheProvider": "hazelcast",
-    "jwtSecretKey": "NGUyOTY4NGYwOTE3MTY5NTkzOWVhM2VkZWMxNDUzZWFjYmM3ZTZkNmMyMDVjN2I0NTFhZjEwMGQwNzMwYmM4ZTRiNzJiODQxZWJlMTExMzQ5MDhjMTFkNzY1NDBkYTVhY2M3MjExMmY1NDAzZTgzNWVhMjhjYjkyZWExMTIwZGY=",
+    "jwtSecretKey": "Njk5NWU3NDY3N2E0MjgwMDUwOTVkY2FjZGQ3MjA1YzM1MjVjM2U0YTA3MTM0MDllY2RlMzk2OWE3ZTAwMDE3ZWE0ODRhNzQwYWM0MWY3YzEzMmQxNTFiZmQyYjc3OWYyM2VmZWY2NTY3ZWQwZmQ1OGU1Njk2YzM0MTZkMDg1ODY=",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": []
