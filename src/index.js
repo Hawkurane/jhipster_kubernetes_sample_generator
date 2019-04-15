@@ -32,7 +32,7 @@ try {
                 fs.mkdirSync(
                   path.join(
                     __dirname,
-                    `/../samples/${sdType}-${authType}-${proddbType}-${cacheType}`
+                    `/../jdl-samples/${sdType}-${authType}-${proddbType}-${cacheType}`
                   ),
                   { recursive: true },
                   err => {
@@ -42,7 +42,7 @@ try {
                 fs.writeFile(
                   path.join(
                     __dirname,
-                    `/../samples/${sdType}-${authType}-${proddbType}-${cacheType}/microservice-demo.jdl`
+                    `/../jdl-samples/${sdType}-${authType}-${proddbType}-${cacheType}/microservice-demo.jdl`
                   ),
                   str,
                   function(error, data) {

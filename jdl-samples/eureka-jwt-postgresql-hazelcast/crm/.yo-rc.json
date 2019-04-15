@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "com.jhipster.demo.crm",
+    "packageFolder": "com/jhipster/demo/crm",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "crm",
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "buildTool": "maven",
+    "serverPort": "8081",
+    "skipUserManagement": true,
+    "jhipsterVersion": "6.0.0-beta.0",
+    "clientPackageManager": "npm",
+    "cacheProvider": "hazelcast",
+    "jwtSecretKey": "NGUyOTY4NGYwOTE3MTY5NTkzOWVhM2VkZWMxNDUzZWFjYmM3ZTZkNmMyMDVjN2I0NTFhZjEwMGQwNzMwYmM4ZTRiNzJiODQxZWJlMTExMzQ5MDhjMTFkNzY1NDBkYTVhY2M3MjExMmY1NDAzZTgzNWVhMjhjYjkyZWExMTIwZGY=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "entities": [
+    "Product",
+    "Customer",
+    "ProductOrder",
+    "OrderItem"
+  ]
+}

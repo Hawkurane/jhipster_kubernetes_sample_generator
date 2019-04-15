@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "kubernetes",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": [
+      "store",
+      "crm"
+    ],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": "eureka",
+    "dockerRepositoryName": "jeromepham",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "jhipster",
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "istio": false
+  }
+}
