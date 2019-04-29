@@ -1,4 +1,19 @@
 application {
+  config {
+   baseName uaawei,
+   packageName com.jhipster.demo.uaawei,
+   serviceDiscoveryType eureka,
+   authenticationType uaa,
+   prodDatabaseType postgresql,
+   cacheProvider hazelcast,
+   buildTool maven,
+   serverPort 9999,
+   testFrameworks [gatling, protractor]
+  }
+}
+   
+
+application {
  config {
    baseName store,
    applicationType gateway,
