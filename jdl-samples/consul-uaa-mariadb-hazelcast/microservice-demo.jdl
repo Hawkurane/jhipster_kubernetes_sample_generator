@@ -1,3 +1,19 @@
+
+application {
+ config {
+   baseName uaa,
+   packageName com.jhipster.demo.uaa,
+   serviceDiscoveryType consul,
+   authenticationType uaa,
+   prodDatabaseType mariadb,
+   cacheProvider hazelcast,
+   buildTool maven,
+   serverPort 9999,
+   testFrameworks [gatling, cucumber]
+ }
+}
+
+
 application {
  config {
    baseName store,
@@ -5,6 +21,9 @@ application {
    packageName com.jhipster.demo.store,
    serviceDiscoveryType consul,
    authenticationType uaa,
+   
+   uaaBaseName "uaa",
+   
    prodDatabaseType mariadb,
    cacheProvider hazelcast,
    buildTool maven,
@@ -22,6 +41,9 @@ application {
    packageName com.jhipster.demo.crm,
    serviceDiscoveryType consul,
    authenticationType uaa,
+   
+   uaaBaseName "uaa",
+   
    prodDatabaseType postgresql,
    buildTool maven,
    searchEngine elasticsearch,

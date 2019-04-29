@@ -1,17 +1,18 @@
+
 application {
-  config {
-   baseName uaawei,
-   packageName com.jhipster.demo.uaawei,
+ config {
+   baseName uaa,
+   packageName com.jhipster.demo.uaa,
    serviceDiscoveryType eureka,
    authenticationType uaa,
    prodDatabaseType postgresql,
    cacheProvider hazelcast,
    buildTool maven,
    serverPort 9999,
-   testFrameworks [gatling, protractor]
-  }
+   testFrameworks [gatling, cucumber]
+ }
 }
-   
+
 
 application {
  config {
@@ -20,7 +21,9 @@ application {
    packageName com.jhipster.demo.store,
    serviceDiscoveryType eureka,
    authenticationType uaa,
-   uaaBaseName "uaawei"
+   
+   uaaBaseName "uaa",
+   
    prodDatabaseType postgresql,
    cacheProvider hazelcast,
    buildTool maven,
@@ -38,7 +41,9 @@ application {
    packageName com.jhipster.demo.crm,
    serviceDiscoveryType eureka,
    authenticationType uaa,
-   uaaBaseName "uaawei",
+   
+   uaaBaseName "uaa",
+   
    prodDatabaseType postgresql,
    buildTool maven,
    searchEngine elasticsearch,
