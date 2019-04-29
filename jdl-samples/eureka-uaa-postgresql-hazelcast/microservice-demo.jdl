@@ -5,6 +5,7 @@ application {
    packageName com.jhipster.demo.store,
    serviceDiscoveryType eureka,
    authenticationType uaa,
+   uaaBaseName "uaawei"
    prodDatabaseType postgresql,
    cacheProvider hazelcast,
    buildTool maven,
@@ -22,6 +23,7 @@ application {
    packageName com.jhipster.demo.crm,
    serviceDiscoveryType eureka,
    authenticationType uaa,
+   uaaBaseName "uaawei",
    prodDatabaseType postgresql,
    buildTool maven,
    searchEngine elasticsearch,
