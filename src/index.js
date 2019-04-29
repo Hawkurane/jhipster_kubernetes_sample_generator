@@ -57,6 +57,26 @@ try {
     });
   });
   console.log("Samples generated succesfully.");
+  config.cacheProvider.forEach(cacheType => {
+    ejs.renderFile(
+      "templates/azure-pipelines-jdl-app.yaml.ejs",
+      { config: config, cacheType: cacheType },
+      function(err, str) {
+        if (err) throw new Error(err);
+        fs.writeFile(
+          path.join(
+            __dirname,
+            `../yamls/azure-pipelines-jdl-app-${cacheType}.yaml`
+          ),
+          str,
+          function(error, data) {
+            if (error) throw err;
+          }
+        );
+      }
+    );
+  });
+  console.log("Yamls generated successfully");
 } catch (e) {
   console.error(e);
 }
