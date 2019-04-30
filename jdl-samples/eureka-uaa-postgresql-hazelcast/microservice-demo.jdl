@@ -5,6 +5,7 @@ application {
    packageName com.jhipster.demo.uaa,
    serviceDiscoveryType eureka,
    authenticationType uaa,
+   uaaBaseName "uaa",
    prodDatabaseType postgresql,
    cacheProvider hazelcast,
    buildTool maven,
