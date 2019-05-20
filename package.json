@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "jsonnet": "node src/jsonnet.js",
-    "clean": "rm -rdf samples",
+    "clean": "rm -rdf jdl-samples",
     "rebuild": "clean; start"
   },
   "husky": {

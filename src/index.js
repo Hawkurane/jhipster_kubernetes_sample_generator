@@ -3,8 +3,8 @@ let fs = require("fs");
 let path = require("path");
 const config = {
   serviceDiscoveryType: ["eureka", "consul"],
-  authenticationType: ["jwt", "session", "uaa", "oauth2"],
-  prodDatabaseType: ["mysql", "mariadb", "postgresql"],
+  authenticationType: ["jwt", "session", "oauth2"],
+  prodDatabaseType: ["mysql", "mariadb"],
   cacheProvider: ["hazelcast", "ehcache", "infinispan", "memcached", "no"], //memcached
 
   searchEngine: "elasticsearch", //optional, at the moment not covered

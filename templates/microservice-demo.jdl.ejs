@@ -5,6 +5,7 @@ application {
    packageName com.jhipster.demo.uaa,
    serviceDiscoveryType <%= sdType %>,
    authenticationType uaa,
+   uaaBaseName "uaa",
    prodDatabaseType <%= proddbType %>,
    cacheProvider <%= cacheType %>,
    buildTool maven,
@@ -20,10 +21,8 @@ application {
    applicationType gateway,
    packageName com.jhipster.demo.store,
    serviceDiscoveryType <%= sdType %>,
-   authenticationType <%= authType %>,
-   <% if(authType === 'uaa') { %>
-   uaaBaseName "uaa",
-   <% } %>
+   authenticationType <%= authType %>,<% if(authType === 'uaa') { %>
+   uaaBaseName "uaa",<% } %>
    prodDatabaseType <%= proddbType %>,
    cacheProvider <%= cacheType %>,
    buildTool maven,
@@ -135,6 +134,16 @@ paginate Invoice, Shipment with pagination
 microservice Invoice, Shipment with accountancy
 microservice Customer, Product, ProductOrder, OrderItem with crm
 
+// will be created under 'docker-compose' folder
+deployment {
+   deploymentType docker-compose,
+   appsFolders [store, crm],
+   dockerRepositoryName "jeromepham"
+   monitoring no,
+   serviceDiscoveryType <%= sdType %>
+}
+
+// will be created under 'kubernetes' folder
 deployment {
    deploymentType kubernetes,
    appsFolders [store, crm]

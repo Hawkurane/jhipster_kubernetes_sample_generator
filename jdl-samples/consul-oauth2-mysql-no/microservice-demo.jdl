@@ -7,7 +7,6 @@ application {
    packageName com.jhipster.demo.store,
    serviceDiscoveryType consul,
    authenticationType oauth2,
-   
    prodDatabaseType mysql,
    cacheProvider no,
    buildTool maven,
@@ -117,6 +116,16 @@ paginate Invoice, Shipment with pagination
 microservice Invoice, Shipment with accountancy
 microservice Customer, Product, ProductOrder, OrderItem with crm
 
+// will be created under 'docker-compose' folder
+deployment {
+   deploymentType docker-compose,
+   appsFolders [store, crm],
+   dockerRepositoryName "jeromepham"
+   monitoring no,
+   serviceDiscoveryType consul
+}
+
+// will be created under 'kubernetes' folder
 deployment {
    deploymentType kubernetes,
    appsFolders [store, crm]

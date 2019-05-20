@@ -46,26 +46,11 @@ jobs:
       eureka-jwt-mariadb-infinispan:
         JHI_APP: eureka-jwt-mariadb-infinispan
         JHI_ENTITY: jdl
-      eureka-jwt-postgresql-infinispan:
-        JHI_APP: eureka-jwt-postgresql-infinispan
-        JHI_ENTITY: jdl
       eureka-session-mysql-infinispan:
         JHI_APP: eureka-session-mysql-infinispan
         JHI_ENTITY: jdl
       eureka-session-mariadb-infinispan:
         JHI_APP: eureka-session-mariadb-infinispan
-        JHI_ENTITY: jdl
-      eureka-session-postgresql-infinispan:
-        JHI_APP: eureka-session-postgresql-infinispan
-        JHI_ENTITY: jdl
-      eureka-uaa-mysql-infinispan:
-        JHI_APP: eureka-uaa-mysql-infinispan
-        JHI_ENTITY: jdl
-      eureka-uaa-mariadb-infinispan:
-        JHI_APP: eureka-uaa-mariadb-infinispan
-        JHI_ENTITY: jdl
-      eureka-uaa-postgresql-infinispan:
-        JHI_APP: eureka-uaa-postgresql-infinispan
         JHI_ENTITY: jdl
       eureka-oauth2-mysql-infinispan:
         JHI_APP: eureka-oauth2-mysql-infinispan
@@ -73,17 +58,11 @@ jobs:
       eureka-oauth2-mariadb-infinispan:
         JHI_APP: eureka-oauth2-mariadb-infinispan
         JHI_ENTITY: jdl
-      eureka-oauth2-postgresql-infinispan:
-        JHI_APP: eureka-oauth2-postgresql-infinispan
-        JHI_ENTITY: jdl
       consul-jwt-mysql-infinispan:
         JHI_APP: consul-jwt-mysql-infinispan
         JHI_ENTITY: jdl
       consul-jwt-mariadb-infinispan:
         JHI_APP: consul-jwt-mariadb-infinispan
-        JHI_ENTITY: jdl
-      consul-jwt-postgresql-infinispan:
-        JHI_APP: consul-jwt-postgresql-infinispan
         JHI_ENTITY: jdl
       consul-session-mysql-infinispan:
         JHI_APP: consul-session-mysql-infinispan
@@ -91,26 +70,11 @@ jobs:
       consul-session-mariadb-infinispan:
         JHI_APP: consul-session-mariadb-infinispan
         JHI_ENTITY: jdl
-      consul-session-postgresql-infinispan:
-        JHI_APP: consul-session-postgresql-infinispan
-        JHI_ENTITY: jdl
-      consul-uaa-mysql-infinispan:
-        JHI_APP: consul-uaa-mysql-infinispan
-        JHI_ENTITY: jdl
-      consul-uaa-mariadb-infinispan:
-        JHI_APP: consul-uaa-mariadb-infinispan
-        JHI_ENTITY: jdl
-      consul-uaa-postgresql-infinispan:
-        JHI_APP: consul-uaa-postgresql-infinispan
-        JHI_ENTITY: jdl
       consul-oauth2-mysql-infinispan:
         JHI_APP: consul-oauth2-mysql-infinispan
         JHI_ENTITY: jdl
       consul-oauth2-mariadb-infinispan:
         JHI_APP: consul-oauth2-mariadb-infinispan
-        JHI_ENTITY: jdl
-      consul-oauth2-postgresql-infinispan:
-        JHI_APP: consul-oauth2-postgresql-infinispan
         JHI_ENTITY: jdl
   steps:
   - template: azure-template-plus.yml

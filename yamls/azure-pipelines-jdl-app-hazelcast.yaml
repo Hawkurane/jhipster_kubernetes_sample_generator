@@ -46,26 +46,11 @@ jobs:
       eureka-jwt-mariadb-hazelcast:
         JHI_APP: eureka-jwt-mariadb-hazelcast
         JHI_ENTITY: jdl
-      eureka-jwt-postgresql-hazelcast:
-        JHI_APP: eureka-jwt-postgresql-hazelcast
-        JHI_ENTITY: jdl
       eureka-session-mysql-hazelcast:
         JHI_APP: eureka-session-mysql-hazelcast
         JHI_ENTITY: jdl
       eureka-session-mariadb-hazelcast:
         JHI_APP: eureka-session-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      eureka-session-postgresql-hazelcast:
-        JHI_APP: eureka-session-postgresql-hazelcast
-        JHI_ENTITY: jdl
-      eureka-uaa-mysql-hazelcast:
-        JHI_APP: eureka-uaa-mysql-hazelcast
-        JHI_ENTITY: jdl
-      eureka-uaa-mariadb-hazelcast:
-        JHI_APP: eureka-uaa-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      eureka-uaa-postgresql-hazelcast:
-        JHI_APP: eureka-uaa-postgresql-hazelcast
         JHI_ENTITY: jdl
       eureka-oauth2-mysql-hazelcast:
         JHI_APP: eureka-oauth2-mysql-hazelcast
@@ -73,17 +58,11 @@ jobs:
       eureka-oauth2-mariadb-hazelcast:
         JHI_APP: eureka-oauth2-mariadb-hazelcast
         JHI_ENTITY: jdl
-      eureka-oauth2-postgresql-hazelcast:
-        JHI_APP: eureka-oauth2-postgresql-hazelcast
-        JHI_ENTITY: jdl
       consul-jwt-mysql-hazelcast:
         JHI_APP: consul-jwt-mysql-hazelcast
         JHI_ENTITY: jdl
       consul-jwt-mariadb-hazelcast:
         JHI_APP: consul-jwt-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      consul-jwt-postgresql-hazelcast:
-        JHI_APP: consul-jwt-postgresql-hazelcast
         JHI_ENTITY: jdl
       consul-session-mysql-hazelcast:
         JHI_APP: consul-session-mysql-hazelcast
@@ -91,26 +70,11 @@ jobs:
       consul-session-mariadb-hazelcast:
         JHI_APP: consul-session-mariadb-hazelcast
         JHI_ENTITY: jdl
-      consul-session-postgresql-hazelcast:
-        JHI_APP: consul-session-postgresql-hazelcast
-        JHI_ENTITY: jdl
-      consul-uaa-mysql-hazelcast:
-        JHI_APP: consul-uaa-mysql-hazelcast
-        JHI_ENTITY: jdl
-      consul-uaa-mariadb-hazelcast:
-        JHI_APP: consul-uaa-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      consul-uaa-postgresql-hazelcast:
-        JHI_APP: consul-uaa-postgresql-hazelcast
-        JHI_ENTITY: jdl
       consul-oauth2-mysql-hazelcast:
         JHI_APP: consul-oauth2-mysql-hazelcast
         JHI_ENTITY: jdl
       consul-oauth2-mariadb-hazelcast:
         JHI_APP: consul-oauth2-mariadb-hazelcast
-        JHI_ENTITY: jdl
-      consul-oauth2-postgresql-hazelcast:
-        JHI_APP: consul-oauth2-postgresql-hazelcast
         JHI_ENTITY: jdl
   steps:
   - template: azure-template-plus.yml
