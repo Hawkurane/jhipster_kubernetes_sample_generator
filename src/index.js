@@ -56,7 +56,9 @@ try {
       });
     });
   });
-  console.log("Samples generated succesfully.");
+  console.log(
+    `Samples (${config.serviceDiscoveryType.length * config.authenticationType.length * config.prodDatabaseType.length * config.cacheProvider.length} files) generated succesfully.`
+  );
   config.cacheProvider.forEach(cacheType => {
     ejs.renderFile(
       "templates/azure-pipelines-jdl-app.yaml.ejs",
@@ -70,13 +72,14 @@ try {
           ),
           str,
           function(error, data) {
+            console.log(`... azurepipelines-jdl-app-${cacheType}.yaml`);
             if (error) throw err;
           }
         );
       }
     );
   });
-  console.log("Yamls generated successfully");
+  console.log("====> Yamls generated successfully.");
 } catch (e) {
   console.error(e);
 }

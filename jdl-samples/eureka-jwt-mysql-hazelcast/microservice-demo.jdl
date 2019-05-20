@@ -9,7 +9,7 @@ application {
    authenticationType jwt,
    prodDatabaseType mysql,
    cacheProvider hazelcast,
-   buildTool gradle,
+   buildTool maven,
    clientFramework angularX,
    enableSwaggerCodegen true,
    testFrameworks [protractor]
@@ -26,7 +26,7 @@ application {
    authenticationType jwt,
    
    prodDatabaseType postgresql,
-   buildTool gradle,
+   buildTool maven,
    searchEngine elasticsearch,
    serverPort 8081,
    skipUserManagement true
