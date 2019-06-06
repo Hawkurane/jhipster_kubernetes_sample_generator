@@ -1,16 +1,18 @@
-let ejs = require("ejs");
-let fs = require("fs");
-let path = require("path");
-const config = {
-  serviceDiscoveryType: ["eureka", "consul"],
-  authenticationType: ["jwt", "session", "oauth2"],
-  prodDatabaseType: ["mysql", "mariadb"],
-  cacheProvider: ["hazelcast", "ehcache", "infinispan", "memcached", "no"], //memcached
+const ejs = require("ejs");
+const fs = require("fs");
+const path = require("path");
+const chalk = require("chalk");
+// const config = {
+//   serviceDiscoveryType: ["eureka", "consul"],
+//   authenticationType: ["jwt", "session", "oauth2"],
+//   prodDatabaseType: ["mysql", "mariadb"],
+//   cacheProvider: ["hazelcast", "ehcache", "infinispan", "memcached", "no"], //memcached
 
-  searchEngine: "elasticsearch", //optional, at the moment not covered
-  messageBroker: "useKakfa: = true" //optional, at the moment not covered
-  //Open API?
-};
+//   searchEngine: "elasticsearch", //optional, at the moment not covered
+//   messageBroker: "useKakfa: = true" //optional, at the moment not covered
+//   //Open API?
+// };
+const config = require("./res/config.json");
 
 const filename = "templates/microservice-demo.jdl.ejs";
 try {
@@ -57,29 +59,9 @@ try {
     });
   });
   console.log(
+    chalk.green(
     `Samples (${config.serviceDiscoveryType.length * config.authenticationType.length * config.prodDatabaseType.length * config.cacheProvider.length} files) generated succesfully.`
-  );
-  config.cacheProvider.forEach(cacheType => {
-    ejs.renderFile(
-      "templates/azure-pipelines-jdl-app.yaml.ejs",
-      { config: config, cacheType: cacheType },
-      function(err, str) {
-        if (err) throw new Error(err);
-        fs.writeFile(
-          path.join(
-            __dirname,
-            `../yamls/azure-pipelines-jdl-app-${cacheType}.yaml`
-          ),
-          str,
-          function(error, data) {
-            console.log(`... azurepipelines-jdl-app-${cacheType}.yaml`);
-            if (error) throw err;
-          }
-        );
-      }
-    );
-  });
-  console.log("====> Yamls generated successfully.");
-} catch (e) {
+  ));
+  } catch (e) {
   console.error(e);
 }
