@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js; node src/yml-generator.js",
-    "clean": "rm -rdf jdl-samples",
+    "clean": "rm -rdf jdl-samples; rm -rdf yamls",
     "rebuild": "clean; start",
     "generate:yml": "node src/yml-generator.js",
     "generate:sample": "node src/index.js"

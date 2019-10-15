@@ -37,11 +37,12 @@ jobs:
     SPRING_JPA_SHOW_SQL: false
     JHI_DISABLE_WEBPACK_LOGS: true
     JHI_E2E_HEADLESS: true
+    JHI_LOCAL_SCRIPTS: $(Build.SourcesDirectory)/test-integration/jdl-scripts
 
   strategy:
-    matrix:<% for(let i=0; i<config.serviceDiscoveryType.length; i++) { %><% for(let j=0; j<config.authenticationType.length; j++) { %><% for(let k=0; k<config.prodDatabaseType.length; k++) { %>
-      <%= config.serviceDiscoveryType[i] %>-<%= config.authenticationType[j] %>-<%= config.prodDatabaseType[k] %>-<%= cacheType %>:
-        JHI_APP: <%= config.serviceDiscoveryType[i] %>-<%= config.authenticationType[j] %>-<%= config.prodDatabaseType[k] %>-<%= cacheType %>
-        JHI_ENTITY: jdl<% }}} %>
+    matrix:<% for(let i=0; i<config.serviceDiscoveryType.length; i++) { %><% for(let j=0; j<config.authenticationType.length; j++) { %>
+      <%= config.serviceDiscoveryType[i] %>-<%= config.authenticationType[j] %>-<%= prodDbType %>-<%= cacheType %>:
+        JHI_APP: <%= config.serviceDiscoveryType[i] %>-<%= config.authenticationType[j] %>-<%= prodDbType %>-<%= cacheType %>
+        JHI_ENTITY: jdl<% }} %>
   steps:
   - template: azure-template-plus.yml
