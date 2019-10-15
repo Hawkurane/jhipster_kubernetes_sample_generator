@@ -2,12 +2,6 @@ const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
 const chalk = require("chalk");
-// const config = {
-//   serviceDiscoveryType: ["eureka", "consul"],
-//   authenticationType: ["jwt", "session", "oauth2"],
-//   prodDatabaseType: ["mysql", "mariadb"],
-//   cacheProvider: ["hazelcast", "ehcache", "infinispan", "memcached", "no"], //memcached
-
 //   searchEngine: "elasticsearch", //optional, at the moment not covered
 //   messageBroker: "useKakfa: = true" //optional, at the moment not covered
 //   //Open API?
